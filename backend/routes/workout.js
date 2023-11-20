@@ -6,9 +6,9 @@ const {
     getWorkout,
     deleteWorkout,
     updateWorkout
-} = require('../controllers/workoutController')
+} = require('../controllers/workoutController')  // importing workout conrollers
 
-const router = express.Router()
+const router = express.Router() //using express router to navigate between pages
 
 //GET all workouts
 router.get('/', getWorkouts)
@@ -17,7 +17,7 @@ router.get('/', getWorkouts)
 router.get('/:id', getWorkout)
 
 //POST a new workouts
-router.post('/', createWorkout) // async
+router.post('/', createWorkout) 
 
 //DELETE a workouts
 router.delete('/:id', deleteWorkout)
@@ -25,4 +25,4 @@ router.delete('/:id', deleteWorkout)
 //PATCH(Update) a workouts
 router.patch('/:id', updateWorkout)
 
-module.exports = router
+module.exports = router  //exporting app routing to server

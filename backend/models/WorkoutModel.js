@@ -6,12 +6,12 @@
 
 const mongoose = require('mongoose')
 
-const Schema = mongoose.Schema
+const Schema = mongoose.Schema // using mongoose metod to create new schemas
 
-const workoutSchema = new Schema({
+const workoutSchema = new Schema({ // creatig new schema
     title: {
         type: String,
-        required: true
+        required: true // reuired param
     },
     reps: {
         type: Number,
@@ -24,4 +24,4 @@ const workoutSchema = new Schema({
 }, { timestamps: true}) // automatialy adds 'create prparty stamp'
 
 //imropting the Model 
-module.exports = mongoose.model('Workout', workoutSchema) //autocreates Workouts collection
+module.exports = mongoose.model('Workout', workoutSchema) //autocreates Workouts collection based on schema

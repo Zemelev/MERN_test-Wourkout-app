@@ -19,12 +19,12 @@ const app = express()
 app.use(express.json())
 
 app.use((req, res, next) => {
-    console.log(req.path, req.method)
+    console.log(req.path, req.method)  
     next()
 })
 
 //routes
-app.use('/api/workout', workoutRoutes)
+app.use('/api/workout', workoutRoutes) // app routing 
 
 //conect to db
 mongoose.connect(process.env.MONG_URI) //acinhronus, conecting to db uri by the .env variable
