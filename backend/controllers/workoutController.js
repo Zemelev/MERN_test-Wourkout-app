@@ -1,4 +1,3 @@
-const workoutModel = require('../models/workoutModel')
 const Workout = require('../models/workoutModel')
 const mongoose = require('mongoose')
 
@@ -28,7 +27,7 @@ const getWorkout = async (req,res) => {
 
 //create new workout
 const createWorkout = async (req, res) => {
-        
+    const {title, load, reps} = req.body    
     
     // add doc to db
     try {

@@ -10,7 +10,7 @@ const express = require('express')
 // strickt data structure
 const mongoose = require('mongoose')
 
-const workoutRoutes = require('./routes/workout.js')
+const workoutRoutes = require('./routes/workout')
 
 //express app
 const app = express()
@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 })
 
 //routes
-app.use('/api/workout', workoutRoutes) // app routing 
+app.use('/api/workouts', workoutRoutes) // app routing 
 
 //conect to db
 mongoose.connect(process.env.MONG_URI) //acinhronus, conecting to db uri by the .env variable
@@ -39,3 +39,4 @@ mongoose.connect(process.env.MONG_URI) //acinhronus, conecting to db uri by the 
     })
 
 
+ 
