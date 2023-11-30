@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useWorkoutsContext } from "../hooks/useWorkoutsContext" //imporing our hook
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext" //imporing our custom hook
 
 const WorkoutForm = () => {
     const { dispatch } = useWorkoutsContext() // desruct custom hook to use dipatch func

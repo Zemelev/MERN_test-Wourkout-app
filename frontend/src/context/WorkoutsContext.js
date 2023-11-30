@@ -14,6 +14,10 @@ export const workoutsReducer = (state, action) => { //creating reducer func | ta
             return {
                 workouts: [action.payload, ...state.workouts] // returning new workout first and the rest of workouts
             }
+        case 'DELETE_WORKOUT': // in case we want to delete workout
+            return {
+                workouts: state.workouts.filter((w) => w._id !== action.payload._id) // returning all workouts accept the wourkout we delete
+            }
         default:
             return state // returning the unchanged state
     }
