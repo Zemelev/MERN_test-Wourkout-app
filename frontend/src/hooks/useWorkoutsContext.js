@@ -1,9 +1,9 @@
 // custom hook for each context we have
 
-import { WorkoutsContext } from "../context/WorkoutContext";
+import { WorkoutsContext } from "../context/WorkoutsContext";
 import { useContext } from "react";
 
-export const useWorkoutContext = () => {
+export const useWorkoutsContext = () => {
     const context = useContext(WorkoutsContext) // object with state and dispatch functions
 
     if (!context) { // simple check if the context is on scope

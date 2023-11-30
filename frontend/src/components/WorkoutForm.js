@@ -1,6 +1,9 @@
 import { useState } from "react"
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext" //imporing our hook
 
 const WorkoutForm = () => {
+    const { dispatch } = useWorkoutsContext() // desruct custom hook to use dipatch func
+
     const [title, setTitle] = useState('') // creating states for each property in the form
     const [load, setLoad] = useState('')
     const [reps, setReps] = useState('')
@@ -24,10 +27,11 @@ const WorkoutForm = () => {
             setError(json.error)
         } 
         if (response.ok) {
+            setError(null) // if where was an error seting it to null
             setTitle('') //reseting form states
             setLoad('')
             setReps('')
-            setError(null) // if where was an error seting it to null
+            dispatch({type: 'CREATE_WORKOUT', payload: json}) //adding new workout to global context state
             console.log('new workout added:', json)
         }
     }
