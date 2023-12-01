@@ -22,7 +22,7 @@ const Home = () => {      // creating home page
         }
 
         fetchWorkouts()
-    }, []) //dependeces array, if empty fires function ones
+    }, [dispatch]) //dependeces array, if empty fires function ones
 
     return (
         <div className="home">

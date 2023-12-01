@@ -27,7 +27,22 @@ const getWorkout = async (req,res) => {
 
 //create new workout
 const createWorkout = async (req, res) => {
-    const {title, load, reps} = req.body    
+    const {title, load, reps} = req.body   
+    
+    let emptyFields = [] // hendling form fill errors
+
+    if(!title) {
+        emptyFields.push('title')
+    }
+    if(!load) {
+        emptyFields.push('load')
+    }
+    if(!reps) {
+        emptyFields.push('reps')
+    }
+    if(emptyFields.length > 0) { // checking if there are any empty field
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
     
     // add doc to db
     try {
